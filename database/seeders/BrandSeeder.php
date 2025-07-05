@@ -1,0 +1,132 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Brand;
+use Illuminate\Support\Str;
+use Illuminate\Database\Seeder;
+
+
+class BrandSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $brands = [
+            'Apple',
+            'Samsung',
+            'Sony',
+            'LG',
+            'Nike',
+            'Adidas',
+            'Puma',
+            'Asus',
+            'HP',
+            'Dell',
+            'Lenovo',
+            'Microsoft',
+            'Canon',
+            'Nikon',
+            'Panasonic',
+            'Philips',
+            'Rolex',
+            'Ray-Ban',
+            'Casio',
+            'Levi\'s',
+            'Zara',
+            'H&M',
+            'Under Armour',
+            'Reebok',
+            'Vans',
+            'New Balance',
+            'Bose',
+            'JBL',
+            'Beats',
+            'OnePlus',
+            'Realme',
+            'Xiaomi',
+            'Motorola',
+            'TCL',
+            'Haier',
+            'Whirlpool',
+            'Bosch',
+            'KitchenAid',
+            'Tupperware',
+            'IKEA',
+            'Woodcraft',
+            'Colgate',
+            'Dove',
+            'Nivea',
+            'L’Oréal',
+            'Maybelline',
+            'Gillette',
+            'Huggies',
+            'Pampers',
+            'Nestlé',
+            'Kellogg\'s',
+            'Coca-Cola',
+            'Pepsi',
+            'Red Bull',
+            'Monster',
+            'Heinz',
+            'Oreo',
+            'Amul',
+            'Britannia',
+            'Parle',
+            'Maggi',
+            'Toyota',
+            'Honda',
+            'Ford',
+            'Chevrolet',
+            'BMW',
+            'Mercedes-Benz',
+            'Audi',
+            'Hyundai',
+            'Kia',
+            'Mahindra',
+            'Tata Motors',
+            'Bajaj',
+            'Hero',
+            'TVS',
+            'Yamaha',
+            'Suzuki',
+            'Decathlon',
+            'Columbia',
+            'The North Face',
+            'Crocs',
+            'Converse',
+            'Fossil',
+            'Titan',
+            'Diesel',
+            'Calvin Klein',
+            'Tommy Hilfiger',
+            'Gucci',
+            'Prada',
+            'Chanel',
+            'Versace',
+            'Armani',
+            'Louis Vuitton',
+            'Burberry',
+            'Hugo Boss',
+            'Lacoste',
+            'Raymond',
+            'Allen Solly',
+            'Peter England',
+            'Van Heusen',
+            'Wrangler',
+            'Lee',
+            'U.S. Polo Assn.',
+            'Flying Machine',
+            'Woodland',
+        ];
+
+        foreach ($brands as $brand) {
+            Brand::create([
+                'name' => $brand,
+                'slug' => Str::slug($brand),
+            ]);
+        }
+    }
+}
