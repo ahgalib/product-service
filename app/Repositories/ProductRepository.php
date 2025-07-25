@@ -58,4 +58,9 @@ class ProductRepository
             'is_active' => 1,
         ]);
     }
+
+    public function find($id)
+    {
+        return Product::find($id);
+    }
 }

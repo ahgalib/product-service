@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Services\ProductService;
 use App\Http\Requests\ProductRequest;
@@ -64,5 +65,22 @@ class ProductController extends Controller
         return response()->json([
             'results' => $hits
         ]);
+    }
+
+    public function update(ProductRequest $request, $id)
+    {
+        $product = $this->productService->update($id, $request->validated());
+        return response()->json($product);
+    }
+
+    public function destroy($id)
+    {
+        $product = Product::find($id);
+        if (!$product) {
+            return response()->json(['error' => 'Product not found'], 404);
+        }
+
+        $product->delete();
+        return response()->json(null, 204);
     }
 }

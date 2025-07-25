@@ -20,9 +20,9 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
-        $category = Category::inRandomOrder()->first();
-        $subcategory = Subcategory::where('category_id', $category->id)->inRandomOrder()->first();
-        $brand = Brand::inRandomOrder()->first();
+        $category = Category::inRandomOrder()->first() ?? Category::factory()->create();
+        $subcategory = Subcategory::where('category_id', $category->id)->inRandomOrder()->first() ?? SubCategory::factory()->create(['category_id' => $category->id]);
+        $brand = Brand::inRandomOrder()->first() ?? Brand::factory()->create();
 
         // Realistic product types by category
         $productTypes = [

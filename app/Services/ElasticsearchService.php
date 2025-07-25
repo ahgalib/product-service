@@ -2,9 +2,6 @@
 
 namespace App\Services;
 
-use Elasticsearch\Client;
-use Elasticsearch\ClientInterface;
-use Elasticsearch\ClientBuilder;
 use Elastic\Elasticsearch\Client as ElasticClient;
 use Elastic\Elasticsearch\ClientBuilder as ElasticClientBuilder;
 

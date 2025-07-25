@@ -24,6 +24,20 @@ class ProductService
         // Validate and create the product using the repository
         return $this->productRepo->createProduct($requestData);
     }
+
+    public function update($id, $requestData)
+    {
+        // Find the product by ID and update it
+        $product = $this->productRepo->find($id);
+        if (!$product) {
+            throw new \Exception('Product not found');
+        }
+
+        $product->update($requestData);
+        return $product;
+    }
+
+    
     
       
 }
