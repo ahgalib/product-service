@@ -19,6 +19,12 @@ class ProductService
         return $this->productRepo->getPaginatedProducts($request);
     }
 
+    public function getBySlug($slug)
+    {
+        // Find the product by slug using the repository
+        return $this->productRepo->findBySlug($slug);
+    }
+
     public function create($requestData)
     {
         // Validate and create the product using the repository

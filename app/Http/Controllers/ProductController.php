@@ -24,6 +24,15 @@ class ProductController extends Controller
         );
     }
 
+    public function show($slug)
+    {
+        $product = $this->productService->getBySlug($slug);
+        if (!$product) {
+            return response()->json(['error' => 'Product not found'], 404);
+        }
+        return response()->json($product);
+    }
+
     public function store(ProductRequest $request)
     {
        

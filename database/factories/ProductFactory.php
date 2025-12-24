@@ -73,8 +73,8 @@ class ProductFactory extends Factory
             'category_id' => $category->id,
             'sub_category_id' => $subcategory->id,
             'is_active' => $this->faker->boolean(90),
-            'created_at' => now(),
-            'updated_at' => now(),
+            // 'created_at' => now(),
+            // 'updated_at' => now(),
         ];
     }
 }

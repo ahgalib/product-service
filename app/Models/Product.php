@@ -23,4 +23,24 @@ class Product extends Model
     {
         return $this->hasMany(ProductImage::class);
     }
+
+    public function sub_category()
+    {
+        return $this->belongsTo(SubCategory::class);
+    }
+
+    public function product_variants()
+    {
+        return $this->hasMany(ProductVariant::class);
+    }
+
+    public function product_tags()
+    {
+        return $this->hasMany(ProductTag::class);
+    }
+
+    public function product_images()
+    {
+        return $this->hasMany(ProductImage::class);
+    }
 }

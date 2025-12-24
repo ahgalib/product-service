@@ -38,6 +38,7 @@ use App\Http\Controllers\SubCategoryController;
 // Product routes
 Route::controller(ProductController::class)->prefix('products')->group(function () {
     Route::get('/', 'index');
+    Route::get('/{slug}', 'show');
     Route::post('/', 'store');
     Route::get('/search', 'search');
     Route::get('/autocomplete', 'autocomplete');
